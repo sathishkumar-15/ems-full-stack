@@ -1,0 +1,77 @@
+html, body, #root {
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/023/824/046/small/businessman-hand-pressing-human-resources-button-human-resources-hr-management-employment-headhunting-concept-hand-holding-modern-social-buttons-on-virtual-background-photo.jpg') no-repeat center center/cover;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+.header{
+  position: relative;
+  top: auto;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+.footer{
+  position: relative;
+  bottom: auto;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+.glass-card label{
+  color: white;
+}
+.glass-card{
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.container{
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.glass-card h2,
+.glass-card label {
+  color: white;
+}
+.glass-table{
+  background: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table{
+  background-color: transparent !important;
+}
+.table th,
+.table td {
+  background-color: transparent !important;
+  color: white;
+}
