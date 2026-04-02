@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const REST_API_BASE_URL = "process.env.REACT_APP_API_URL";
+const REST_API_BASE_URL = "https://ems-full-stack-10.onrender.com";
 
 export const listEmployees = () => axios.get(REST_API_BASE_URL);
 
