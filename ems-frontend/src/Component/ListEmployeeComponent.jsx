@@ -12,13 +12,20 @@ const ListEmployeeComponent = () => {
   }, []);
 
   function getAllEmployees(){
-    listEmployees()
-      .then((response) => {
-        console.log(response.data);
+  listEmployees()
+    .then((response) => {
+      console.log("API Response:", response.data);
+
+      if (Array.isArray(response.data)) {
         setEmployees(response.data);
-      })
-      .catch(error => {
-        console.error(error);
+      } else {
+        console.error("Not an array:", response.data);
+        setEmployees([]);
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      setEmployees([]);
       });
   }
 
