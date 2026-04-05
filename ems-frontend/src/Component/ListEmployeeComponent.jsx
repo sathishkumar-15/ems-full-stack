@@ -7,10 +7,8 @@ const ListEmployeeComponent = () => {
 
   const navigator = useNavigate();
 
-  useEffect(() => {
-    getAllEmployees();
-  }, []);
-
+  const [loading, setLoading] = useState(true);
+  
   function getAllEmployees(){
   listEmployees()
     .then((response) => {
@@ -22,12 +20,19 @@ const ListEmployeeComponent = () => {
         console.error("Not an array:", response.data);
         setEmployees([]);
       }
+      setLoading(false);
     })
     .catch(error => {
-      console.error(error);
-      setEmployees([]);
+      console.error("Retrying... Backend might be sleeping", error);
+      setTimeout(() => {
+        getAllEmployees();
+      }, 5000);
       });
   }
+
+  useEffect(() => {
+      getAllEmployees();
+  }, []);
 
   function addNewEmployee() {
     navigator('/add-employee')
@@ -45,6 +50,14 @@ const ListEmployeeComponent = () => {
       console.error(error);
     })
   }
+
+  if(loading){
+      return (
+        <div style={{textAlign: 'center',marginTop: '50px'}}>
+          <h2 style={{color: 'white'}}>Loading... please wait</h2>
+        </div>
+      );
+    }
 
   return (
     <div className="container">
